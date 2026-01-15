@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap');
+
+:root {
+  color-scheme: dark;
+  --gold: #e0c38c;
+  --gold-bright: #f6e0ad;
+  --amber: #f7d99b;
+  --rose: #c97d8c;
+  --ink: #120b17;
+  --shadow: rgba(10, 5, 15, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Crimson Text', serif;
+  background: radial-gradient(circle at top, #2a1936 0%, #0e0914 60%);
+  color: var(--amber);
+}
+
+.page {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(320px, 1fr);
+  gap: 2.5rem;
+  padding: 3rem clamp(1.5rem, 4vw, 4rem);
+}
+
+.controls {
+  background: rgba(17, 10, 24, 0.82);
+  border: 1px solid rgba(224, 195, 140, 0.3);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.controls h1 {
+  margin: 0 0 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-bright);
+}
+
+.hint {
+  margin: 0 0 1.5rem;
+  color: rgba(247, 217, 155, 0.85);
+  font-size: 0.95rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+label {
+  font-weight: 600;
+  color: var(--gold-bright);
+}
+
+input,
+textarea {
+  width: 100%;
+  background: rgba(9, 6, 14, 0.8);
+  color: var(--amber);
+  border: 1px solid rgba(224, 195, 140, 0.4);
+  border-radius: 12px;
+  padding: 0.65rem 0.85rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.invitation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame {
+  padding: 2rem;
+  border: 2px solid rgba(224, 195, 140, 0.55);
+  border-radius: 22px;
+  box-shadow: 0 0 30px rgba(255, 214, 150, 0.2);
+  background: linear-gradient(135deg, rgba(255, 223, 171, 0.08), rgba(0, 0, 0, 0));
+}
+
+.card {
+  position: relative;
+  width: min(420px, 90vw);
+  padding: 2.5rem 2.2rem 2.8rem;
+  background: radial-gradient(circle at top, #24172f 0%, #120917 70%);
+  border-radius: 18px;
+  border: 1px solid rgba(224, 195, 140, 0.25);
+  text-align: center;
+  box-shadow: 0 24px 45px var(--shadow);
+}
+
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(224, 195, 140, 0.25);
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+.card__title {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+}
+
+.ornament {
+  display: block;
+  width: 140px;
+  height: 12px;
+  margin: 1rem auto 1.2rem;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(246, 224, 173, 0.5);
+}
+
+.card__message {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin: 0 0 1.2rem;
+  color: rgba(247, 217, 155, 0.92);
+}
+
+.card__sender {
+  margin: 0 0 1.6rem;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+}
+
+.divider {
+  display: block;
+  width: 70%;
+  height: 1px;
+  margin: 0 auto 1.1rem;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.card__addressee {
+  margin: 0 0 1rem;
+  font-family: 'Cinzel', serif;
+  color: var(--gold-bright);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.card__image-wrapper {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(224, 195, 140, 0.6);
+  box-shadow: 0 0 20px rgba(224, 195, 140, 0.4);
+}
+
+.card__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card__actions {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.button {
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: transparent;
+  color: var(--gold-bright);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button--accept {
+  border-color: rgba(247, 217, 155, 0.7);
+  box-shadow: 0 0 12px rgba(247, 217, 155, 0.4);
+}
+
+.button--decline {
+  border-color: rgba(201, 125, 140, 0.8);
+  color: #f2b2be;
+  box-shadow: 0 0 12px rgba(201, 125, 140, 0.35);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    order: 2;
+  }
+}
