@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Приглашение</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="controls" aria-label="Настройки приглашения">
+        <h1>Конструктор приглашения</h1>
+        <p class="hint">
+          Измени текст, имя отправителя и изображение — карточка обновится сразу.
+        </p>
+        <div class="field">
+          <label for="title">Заголовок</label>
+          <input id="title" type="text" value="Приглашение" />
+        </div>
+        <div class="field">
+          <label for="message">Текст</label>
+          <textarea id="message" rows="6">
+Дорогой гость! Приглашаю тебя в библиотеку. Здесь ты найдешь мудрость, знания и силу. Но будь готов — испытание уже ждет тебя за дверями. Если ты не справишься, ты сам станешь частью легенды.
+          </textarea>
+        </div>
+        <div class="field">
+          <label for="sender">Имя отправителя</label>
+          <input id="sender" type="text" value="— Angela" />
+        </div>
+        <div class="field">
+          <label for="image">Ссылка на изображение</label>
+          <input
+            id="image"
+            type="url"
+            value="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?auto=format&fit=crop&w=800&q=80"
+          />
+        </div>
+        <div class="field">
+          <label for="addressee">Адресат</label>
+          <input id="addressee" type="text" value="Адресат" />
+        </div>
+        <button class="button button--download" id="download" type="button">
+          Скачать приглашение
+        </button>
+      </section>
+
+      <section class="invitation" aria-label="Просмотр приглашения">
+        <div class="frame">
+          <div class="card">
+            <p class="card__title" id="card-title">Приглашение</p>
+            <span class="ornament"></span>
+            <p class="card__message" id="card-message">
+              Дорогой гость! Приглашаю тебя в библиотеку. Здесь ты найдешь мудрость,
+              знания и силу. Но будь готов — испытание уже ждет тебя за дверями. Если ты
+              не справишься, ты сам станешь частью легенды.
+            </p>
+            <p class="card__sender" id="card-sender">— Angela</p>
+            <span class="divider"></span>
+            <p class="card__addressee" id="card-addressee">Адресат</p>
+            <div class="card__image-wrapper">
+              <img
+                id="card-image"
+                src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?auto=format&fit=crop&w=800&q=80"
+                alt="Иллюстрация приглашения"
+              />
+            </div>
+            <div class="card__actions">
+              <button class="button button--accept" type="button">Принять</button>
+              <button class="button button--decline" type="button">Отклонить</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
